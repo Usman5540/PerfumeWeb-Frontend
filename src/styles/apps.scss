@@ -1,9 +1,91 @@
-.couponMain{
+.app-container{
+background-color: white;
+padding:  3rem;
+> section{
+    @include flex(column, center,center,2rem);
+    padding-bottom: 140px;
+    height: 100%;
+.coupon-form{
+
+@include grid(2fr 1fr,2rem);
+max-width: 40rem;
+width: 100%;
+> input{
+   padding: 1rem;
+    border: 1px solid rgba(0,0,0,0.343);
+    outline: none;
+    border-radius: 5px;
+}
+> fieldset{
+    padding: 2rem;
+    @include flex(row,center,center,5px);
+      border-radius: 5px;
+      grid-column: 1/3;
+      >legend{
+        font-size: 1.2rem;
+        font-weight: 500;
+    
+      }
+      label{
+
+        font-size: 1.1rem;
+        font-weight: 400;
+        margin-inline-start: 1rem;
+        margin-inline-end: 1rem;
+      }
+
+}
+ >button {
+    grid-column: 1/3;
+    font-size: 1.2rem;
+    font-weight: 500;
+     width: 100%;
+     padding: 1rem;
+     margin-top: 2rem;
+     border: none;
+     background-color: #1F75FE;
+     color: white;
+     border-radius: 5px;
+     cursor: pointer;
+
+     &:hover {
+         opacity: 0.5;
+     }
 
 
-@include flex(column,center,center,5px);
-background-color: black;
+}
+}
+ >code{
+    font-size: 1rem;
+    position: relative;
+    cursor: pointer;
+    letter-spacing: 2px;
+    &:hover >span{
+      // perent ki one on hover
+        opacity: 1;
+      
+    }
+    //<span onClick={()=>copytext(coupon)}>{iscopied?"copied":"copy"}</span>
+    span{
 
+      @include sequere(100%);
+      // 100 precent cover area according to text how much that long 
+      background-color: black;
+      border-radius: 5px;
+      // span sy mawra krny k liye absolute 
+      // works according to parrent  o top 0 left or right 
+      position: absolute;
+      top: 0;
+      right: 0;
+      // iski  zero krdi parent ki one on hover
+      opacity: 0;
+      color: white;
+    font-size: 0.8rem;
+      @include flex;
+    }
+    
+ }
 
+}
 
 }

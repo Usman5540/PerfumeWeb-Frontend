@@ -8,3 +8,8 @@ In your code, productCard is a function component, but in JSX, components should
 when i loads linechar component that gone away
 solution :
 i did not register that yeah
+
+3: using onclick in form sumbition whcih leading to below answer
+undefined undifined .....
+solution
+for always take onsumbit not on click

@@ -1,6 +1,7 @@
 import { IconType } from "react-icons"
-import { FaChartBar, FaChartLine, FaChartPie, FaGamepad, FaStopwatch } from "react-icons/fa";
-import {  RiCoupon3Fill, RiDashboardFill, RiShoppingBag3Fill } from "react-icons/ri"
+import { FaChartBar, FaChartLine, FaChartPie } from "react-icons/fa";
+import {  RiCoupon3Fill, RiCustomerService2Fill, RiDashboardFill, RiProductHuntFill } from "react-icons/ri"
+import { TbTransactionDollar } from "react-icons/tb";
 import { Link , useLocation,Location} from "react-router-dom"
 
 
@@ -8,12 +9,13 @@ function ADMINSIDEBAR() {
     const location =useLocation();
 
   return (
-    <div className="sidebar" >
-       <h2>logo.</h2>
+   <aside>
+    <h2>logo.</h2>
         <DivOne location={location} />
         <DivTwo location={location} />
         <DivThree location={location} />
-    </div>
+   </aside>
+       
   )
 }
 
@@ -31,7 +33,7 @@ const DivOne= ({location}:{location :Location})=>(
            <Li 
          url="/admin/products"
          text="Products"
-         Icon={RiShoppingBag3Fill}
+         Icon={RiProductHuntFill}
          location={location}
          />
            
@@ -39,7 +41,7 @@ const DivOne= ({location}:{location :Location})=>(
     
          url="/admin/customer"
          text="Customer"
-         Icon={RiShoppingBag3Fill}
+         Icon={RiCustomerService2Fill}
          location={location}
          />
            
@@ -47,7 +49,8 @@ const DivOne= ({location}:{location :Location})=>(
           
          url="/admin/transaction"
          text="transaction"
-         Icon={RiShoppingBag3Fill}
+         Icon={TbTransactionDollar}
+
          location={location}
          />  
         </ul>
@@ -92,24 +95,24 @@ const DivThree = ({ location }: { location: Location }) => (
   <div>
     <h5>Apps</h5>
     <ul>
-      <Li
+      {/* <Li
         url="/admin/app/stopwatch"
         text="Stopwatch"
         Icon={FaStopwatch}
         location={location}
-      />
+      /> */}
       <Li
         url="/admin/app/coupon"
         text="Coupon"
         Icon={RiCoupon3Fill}
         location={location}
       />
-      <Li
+      {/* <Li
         url="/admin/app/toss"
         text="Toss"
         Icon={FaGamepad}
         location={location}
-      />
+      /> */}
     </ul>
   </div>
 );

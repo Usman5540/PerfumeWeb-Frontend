@@ -2,6 +2,7 @@
 @import "dashboard";
 @import "products";
 @import  "chart";
+@import "apps";
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -26,56 +27,63 @@ color: red;
 .purple{
     color: rgb(55, 45, 99);
 }
-.adminContainer
-{
-    @include grid(1fr 4fr ,1rem) ;    
-   height: 130vh;
+
+.adminContainer {
+    @include grid(1fr 4fr, 2rem);
+    height: 100vh;
     background-color: rgb(247, 247, 247);
-    
-}
-.customer-atside{
-    margin-right: 11px;
-}
-.sidebar {
-    background-color: white;
-    width: 100%;
-    padding: 1rem;
-    overflow-y: auto;
-    
-    // // z-index: 10px;
-    .sidebar::-webkit-scrollbar {
-        width: 10px; ;
-    }
-    > div{
-        margin:  1rem 2rem;
-        >h5 {
-                @include heading(0.5rem);
-                opacity: 0.7;
+
+    >aside {
+        width: 100%;
+        background-color: white;
+        padding: 1rem;
+        z-index: 10;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            display:10px;
+        }
+
+        >div {
+            margin: 2rem 1rem;
+
+            >h5 {
+                @include heading(2px);
+                opacity: 0.8;
                 margin: 1rem 0;
             }
-                        ul {
-                            @include flex(column, center, center, 0.5rem);
-                            list-style: none;
-                            // background-color: rgb(45, 45, 92);
-                       
-            
-                            > li {
-                                padding: 0.5rem 1rem;
-                                 // border-radius: px;
-            
-                                a {
-                                    color: rgba(0, 0, 0, 0.825);
-                                    @include flex(row,unset);
-                                    padding: 5px;
-                                }
-                                // svg{
-                                     
-                                //         align-items: baseline;
-                                // }
-                            }
-                        }
-    }
+
+            >ul {
+                @include flex(column, unset, unset, 0.5rem);
+                list-style: none;
+
+                >li {
+                    padding: 0.5rem 1rem;
+                    border-radius: 10px;
+
+                    a {
+                        color: rgba(0, 0, 0, 0.825);
+                        @include flex(row, unset);
+                    }
+                }
+            }
         }
+    }
+}
+aside{
+width: 100%;
+  > div{
+    
+    >h5{
+        @include flex(column,unset,center,0);
+    }
+   > ul{
+          @include flex(column , center,center,5px);
+    }
+
+  }
+}
+
 
                 .table {
                     border-collapse: collapse;
