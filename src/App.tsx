@@ -1,4 +1,4 @@
-import { BrowserRouter as Router,Routes,Route } from "react-router-dom"
+import { BrowserRouter as Router,Routes,Route, Link } from "react-router-dom"
 // we  need to take care about the heirarchi of the importing that creating issues what i saw with red line 
 import { lazy,Suspense } from "react";
 import Bar from "./pages/Charts/Bar";
@@ -26,6 +26,8 @@ function App() {
       {/* header */}
      <Suspense fallback={ <div> loadind...</div>}>
  <Routes >
+  <Route path="/" element={<Link to={"admin/dashboard"}><button>vist Dashboard</button></Link>}  />
+
         <Route path="/admin/dashboard" element={<DASHBOARD/>} />
         <Route path="/admin/transaction" element={<TRANSACTION/>} />
         <Route path="/admin/customer" element={<CUSTOMER/>} />
