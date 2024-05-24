@@ -1,0 +1,66 @@
+.chart-container {
+    background-color: white;
+    padding: 4rem;
+    overflow-y: scroll;
+    
+     &::-webkit-scrollbar{
+        width: 0px;
+     }
+    > h1 {
+        margin: 0 0 5rem 2rem;
+    }
+
+    > section {
+        width: 80%;
+        margin: 4rem auto;
+
+        > div {
+            max-width: 25rem;
+            margin: auto;
+            margin-top: 6rem;
+            margin-bottom: 2rem;
+            > input{
+
+                border: none;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                padding: 1rem;
+                   margin-left: 5px;
+                   border-radius: 5px;
+            }
+            > button{
+                width: 100%;
+                padding: 1rem;
+                margin-top:  2rem;
+                border: none;
+               background-color:  #1F75FE;
+               color: white;
+               border-radius: 5px;
+               cursor: pointer;
+               &:hover{
+                opacity: 0.5;
+               }
+            }
+        >   fieldset {
+               margin: 1rem;
+               padding: 2rem 50px;
+               @include flex(row,center,center,10px);
+
+               
+
+     >input {
+        border: none;
+        // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: rem;
+
+        border-radius: 5px;
+    }
+                     } 
+        }
+
+        > h2 {
+            margin: 2rem 0;
+            text-align: center;
+            @include heading(2px);
+        }
+    }
+}

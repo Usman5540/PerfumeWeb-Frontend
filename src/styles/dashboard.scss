@@ -1,0 +1,187 @@
+.dashboard {
+    // overflow-y: auto;
+    
+    .bar{
+        
+        height: 2rem;
+        @include flex(row,unset);
+        
+
+       border-bottom:  1px solid  rgba(0, 0,0,0.37);
+  > input {
+//    margin: auto;
+   margin-right: auto;
+   margin-bottom: auto;
+   margin-top: auto;
+   @include input( 3px 0,100%);
+   
+  }
+
+  .same{
+    margin-bottom: auto;
+        margin-top: auto;
+  }
+    }
+    
+        .widget-container {
+          @include flex(row, space-between, stretch, 2rem);
+          padding: 2rem 2rem 2rem 0;
+    
+          .widget {
+            width: 16rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.132);
+            padding: 2rem;
+             border-radius: 10px;
+            @include flex(row, space-between, stretch, 0);
+            .widget-info {
+           
+              >p{
+                opacity: 0.7;
+                font-size: 1rem;
+                padding-bottom: 0.2rem;
+              }
+              > h4{
+                      font-size: 1.5rem;
+              }
+              > span {
+                margin: 0.5rem;
+                @include flex(row,unset,center,0.2rem)     
+              }
+            }
+            .widgetCircle{
+              display: grid;
+              place-items:center;
+              position: relative;
+              flex: none;
+              background-color: aqua;
+              border-radius: 50%;
+              @include sequere(5rem);
+              
+               &::before {
+                content: "";
+                    background-color: white;
+                    position:absolute;
+                    
+                    @include sequere(4rem);
+                    border-radius: 100%;
+                   }
+              
+            }
+          }
+          }
+
+          .graph-area{
+
+            @include flex(row,unset,unset,1.5rem);
+            padding: 0 2rem 2rem 0 ;
+            > div{
+              background-color: white;
+              border-radius: 10px;
+            }
+
+            .reveniue-container{
+              padding: 1rem 3rem;
+              width: 100%;
+              >h2{
+                @include heading;
+               padding: 1rem 0 2rem 0.5rem;
+               text-align: center;
+              }
+            }
+            .inventory-container{
+              @include flex(column,center,center,0);
+                max-width: 16rem;
+                padding-bottom: 2rem;
+                width: 100%;
+               
+                 >h2{
+                    @include heading;
+                    padding: 1.5rem  0 2rem ;
+
+   
+                 }
+            }
+          }
+                    .category {
+                      width: 100%;
+                      @include flex(row, space-between);
+                      padding: 1rem;
+          
+                      >h5 {
+                        letter-spacing: 1px;
+                        font-weight: 700;
+                      }
+          
+                      >div {
+                        margin-left: auto;
+                        width: 6rem;
+                        background-color: rgb(217, 217, 217);
+                        border-radius: 20px;
+                        height: 0.5rem;
+                        flex: none;
+                           margin-top: 7px;
+                        >div {
+                          border-radius: 20px;
+                          height: 100%;
+                        }
+                      }
+          
+                      >span {
+                        font-size: 0.8rem;
+                        font-weight: 700;
+                      }
+                    }
+
+                    .LastSection{
+                      @include flex(row, unset, unset, 1.5rem);
+                        padding: 0 2rem 2rem 0;
+                         height: 30rem;
+                        >div {
+                          background-color: white;
+                          box-shadow: 0 10px 10px rgba(0 ,0, 0,0.135);
+                          border-radius: 10px;
+                        }
+                          .detailContainer{
+
+
+                      padding: 1rem 3rem;
+                        width: 100%;
+                         > h2 {@include heading;
+                            padding: 1rem 0 2rem 0.5rem;
+                            text-align: center;
+                          }
+                                            }
+                        .doughnutContainer{
+
+                          width: 100%;
+                            max-width: 20rem;
+                            padding: 1rem;
+                            position: relative;
+                          
+                            >h2 {
+                              text-align: center;
+                              margin: 1.5rem 0 2rem 0;
+                              @include heading;
+                            }
+                          
+                            .p {
+                              @include posCenter;
+                              font-size: 2rem;
+                              color: rgba(0, 0, 0, 0.634);
+                            }
+                            }
+                            .transaction-box{
+                      
+                            width: 100%;
+                            padding: 1rem;
+                            overflow-x: auto;
+                            >h2 {
+                              margin:   1.5rem 0 0 0;
+                              @include heading;
+                             
+
+                            }
+                            }
+                    }
+}
