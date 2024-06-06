@@ -98,6 +98,7 @@ function CUSTOMER() {
   return (
     <div className='adminContainer'>
      {/* SIDEBAR */}
+     
      <ADMINSIDEBAR/>
      {/* MAIN */}
   <main>{table()}</main>

@@ -1,0 +1,59 @@
+@media screen and (width  <= 1200px){
+    .adminContainer
+    {
+        overflow-y: auto;
+    
+    }
+    .dashboard
+    {
+        .widget-container,.graph-area,.LastSection,.Products-box{
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .graph-area{
+            padding: 2rem;
+        }
+    
+        .LastSection{
+    padding: 2rem;
+    height: unset;
+}
+    }
+}
+@media screen and  ( max-width: 1100px ) {
+     .adminContainer{
+        display: grid;
+        grid-template-columns: 1fr !important;
+     }
+}
+@media screen and (max-width: 600px) {
+    .product-management
+    {
+         @include flex(column,center,center,unset);
+         >section
+         {
+            max-width: 400px;
+         }
+
+    }
+     .chart-container {
+            padding: 0;
+            >h2 {
+                margin: 0;
+                text-align: center;
+            }
+    
+            > section {
+                margin: 8rem auto;
+            }
+        }
+        .app-container  > section 
+        {
+        .coupon-form{
+          display: flex;
+          flex-direction: column;
+        }
+
+        }
+}

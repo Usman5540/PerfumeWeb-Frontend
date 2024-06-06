@@ -1,20 +1,44 @@
+import { useState } from "react";
 import { IconType } from "react-icons"
 import { FaChartBar, FaChartLine, FaChartPie } from "react-icons/fa";
 import {  RiCoupon3Fill, RiCustomerService2Fill, RiDashboardFill, RiProductHuntFill } from "react-icons/ri"
+import { RxHamburgerMenu } from "react-icons/rx";
 import { TbTransactionDollar } from "react-icons/tb";
 import { Link , useLocation,Location} from "react-router-dom"
 
 
 function ADMINSIDEBAR() {
     const location =useLocation();
+    const [phoneactive]= useState<boolean>(window.innerWidth <1100);
+    const[showside,setShowside]=useState<boolean>(false)
 
   return (
-   <aside>
+    <>
+    { phoneactive && <button id="hamberg" onClick={()=>setShowside(true)}>
+       
+       <RxHamburgerMenu/>
+       
+      </button>
+      
+    }
+     <aside  style={phoneactive ?{
+      width:"20rem"
+      ,height:"100vh",
+      position:"fixed"
+      , transition:"all 1 sec",
+      top:0,
+      left:showside? "0 " : "-20rem"
+     }:{}}>
     <h2>logo.</h2>
         <DivOne location={location} />
         <DivTwo location={location} />
         <DivThree location={location} />
+        {phoneactive && <button onClick={()=>setShowside(false)}
+        > close
+          </button>}
    </aside>
+    </>
+  
        
   )
 }

@@ -3,6 +3,7 @@
 @import "products";
 @import  "chart";
 @import "apps";
+@import "mediaqueries";
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -27,26 +28,48 @@ color: red;
 .purple{
     color: rgb(55, 45, 99);
 }
+// body{
+    
+// }
+#hamberg{
 
+background-color: #fff;
+color: rgb(13, 105, 242);
+cursor: pointer;
+outline: none;
+border: none;
+display: grid;
+@include sequere(3rem);
+border-radius: 50px;
+position: fixed;
+top: 0.5rem;
+    left: 0.5rem;
+place-items: center;
+font-size: large;
+font-weight:bold;
+z-index: 9;
+
+
+        }
 .adminContainer {
     @include grid(1fr 4fr, 2rem);
     height: 100vh;
     background-color: rgb(247, 247, 247);
 
-    >aside {
-        width: 100%;
+    > aside {
+        width: 100% ;
         background-color: white;
-        padding: 1rem;
-        z-index: 10;
+        padding: 1rem; 
+        z-index: 10;  
         overflow-y: auto;
 
         &::-webkit-scrollbar {
-            display:10px;
+            display:none;
         }
 
-        >div {
+        >   div {
             margin: 2rem 1rem;
-
+                 
             >h5 {
                 @include heading(2px);
                 opacity: 0.8;
@@ -81,6 +104,15 @@ width: 100%;
           @include flex(column , center,center,5px);
     }
 
+  }
+  >button{
+    background-color:rgb(152, 37, 37);
+    border: none;
+    width: 100%;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+    border-radius: 20px;
   }
 }
 
